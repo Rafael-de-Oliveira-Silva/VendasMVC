@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    ViewData["Version"] = " / Versão 1.0.0.0";
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,7 +10,7 @@
     <title>@ViewData["Title"] - VendasMVC</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-darkly.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
@@ -30,9 +34,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Inicio</a></li>
+                    <li><a asp-area="" asp-controller="Departamentos" asp-action="Index">Departamentos</a></li>
+                    <li><a asp-area="" asp-controller="Vendedores" asp-action="Index">Vendedores</a></li>
+                    <li><a asp-area="" asp-controller="VendasRegistros" asp-action="Index">Vendas</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">Sobre</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contato</a></li>
                 </ul>
             </div>
         </div>
@@ -44,7 +51,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2021 - VendasMVC</p>
+            <p>&copy; 2021 - VendasMVC @ViewData["Version"]</p>
         </footer>
     </div>
 
